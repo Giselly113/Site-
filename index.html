@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #195191cb;
+            color: #fff;
+            padding: 5px;
+            text-align: left;
+            font-weight: 700; /* Fonte em negrito */
+        }
+        .search-bar {
+            margin: 20px auto;
+            text-align: left;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .banner {
+            width: 100%;
+            max-height: 300px;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Espaçamento uniforme */
+            margin: 10px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            width: 22%; /* Ajuste para caber 4 produtos por linha */
+            box-sizing: border-box;
+            text-align: center;
+            position: relative; /* Necessário para posicionamento absoluto do botão */
+        }
+        .product img {
+            width: 100%;
+            height: 200px; /* Altura fixa para as imagens */
+            object-fit: contain; /* Ajusta a imagem para caber na caixa */
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product h3 {
+            font-weight: 700; /* Fonte em negrito */
+            margin: 50px 0;
+            font-size: 1.2em;
+        }
+        .product .price-button {
+            background-color: rgb(11, 51, 161);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute; /* Posiciona o botão de forma absoluta */
+            bottom: 10px; /* Distância do fundo da caixa do produto */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Ajusta a posição central */
+        }
+        .product .price-button:hover {
+            background-color: rgb(199, 28, 28);
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+            /* Responsividade */
+            @media (min-width: 768px) {
+            .product {
+                width: calc(25% - 20px); /* Ajuste para caber 4 produtos por linha em telas maiores */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .search-bar {
+                text-align: center;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+
+<header>
+    
+
+    <h1></h1>
+</header><header>
+    <h1 style="display: inline-block;">PROMOMASTT</h1>
+    <div style="display: inline-block; float: right;">
+        <a href="https://chat.whatsapp.com/KqJZp4XchtzALHwo2Y3Dp6" style="margin-right: 10px;">
+            <img src="https://th.bing.com/th/id/OIP.95AioEK2mw9lEDZutjLCegAAAA?rs=1&pid=ImgDetMain" alt="WhatsApp" style="width: 30px; height: 30px; vertical-align: middle;">
+        </a>
+        <a href="https://t.me/canaldeofertasof">
+            <img src="https://th.bing.com/th/id/OIP.63rwmvsb5EpMnk5MaYMqNgHaHa?rs=1&pid=ImgDetMain" alt="Telegram" style="width: 30px; height: 30px; vertical-align: middle;">
+        </a>
+    </div>
+</header>
+<meta name="lomadee-verification" content="23356064" />
+
+<div class="search-bar">
+    <input type="text" id="search-input" placeholder="Pesquisar produtos...">
+    <button onclick="searchProducts()">Buscar</button>
+</div>
+
+
+</div>
+
+<div class="product-grid" id="product-grid">
+    <!-- Produtos existentes -->
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/714LrMhCGJL._AC_SY679_.jpg" alt="Produto 1">
+        <h3>Hering, Camisa Básica Masculina Polo</h3>
+        <a href="link-de-afiliado1" class="price-button" onclick="showAlert('Produto 1')">R$ 59,33</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_746842-MLU72339227055_102023-O.webp" alt="Produto 2">
+        <h3>Shampoo Esfoliante Anticaspa 150g</h3>
+        <a href="#" class="price-button" onclick="showAlert('Produto 2')">R$ 71,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_943478-MLU72700628783_112023-O.webp" alt="Produto 3">
+        <h3>Relógio Casio Masculino Digital</h3>
+        <a href="https://mercadolivre.com/sec/2KC49of" class="price-button" onclick="showAlert('Produto 3')">R$ 118,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_810842-MLU76732995708_062024-O.webp" alt="Produto 4">
+        <h3>Smart TV 32 polegadas HD Roku</h3>
+        <a href="https://mercadolivre.com/sec/1KR8a3X" class="price-button" onclick="showAlert('Produto 4')">R$ 998,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/61lXcxCQQqL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Produto 5">
+        <h3>Óleo Lola Pinga Cenoura e Oliva 50ml</h3>
+        <a href="https://s.shopee.com.br/6KkM8qJFuE" class="price-button" onclick="showAlert('Produto 5')">R$ 26,90</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_603550-MLU77801732376_072024-O.webp" alt="Produto 6">
+        <h3>Guarda-Roupa Solteiro com Espelho 4 Portas 3 Gavetas</h3>
+        <a href="https://mercadolivre.com/sec/2akHSrw" class="price-button" onclick="showAlert('Produto 6')">R$ 621,50</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_814802-MLU75980919841_042024-O.webp" alt="Produto 7">
+        <h3>Jogo de Panelas Solar em Aço Inox 5 Peças Tramontina</h3>
+        <a href="https://mercadolivre.com/sec/1eABFuv" class="price-button" onclick="showAlert('Produto 7')">R$ 512,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/71cIquotuZL._AC_SX679_.jpg" alt="Produto 8">
+        <h3>Heinz Ketchup Tradicional, 1,033KG</h3>
+        <a href="link-de-afiliado8" class="price-button" onclick="showAlert('Produto 8')">R$ 16,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/71ha1jNkzeL._AC_SX679_.jpg" alt="Produto 9">
+        <h3>Composto Lácteo, Nestlé, Ninho Forti+, Pacote, 750g</h3>
+        <a href="https://amzn.to/3Wxo9jV" class="price-button" onclick="showAlert('Produto 9')">R$ 26,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/611phuF3cWL._AC_SX522_.jpg" alt="Produto 10">
+        <h3>Heinz Pack Ketchup 397G + Maionese 390G</h3>
+        <a href="https://amzn.to/4caY8N0" class="price-button" onclick="showAlert('Produto 10')">R$ 22,90</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/41p8MttahYL._AC_SX522_.jpg" alt="Produto 11">
+        <h3>Fritadeira Airfryer Digital, 4.1L</h3>
+        <a href="https://m.media-amazon.com/images/I/41p8MttahYL._AC_SX522_.jpg" class="price-button" onclick="showAlert('Produto 11')">R$ 349,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/81-90xmGZjS._AC_SX679_.jpg" alt="Produto 12">
+        <h3>Ninho - Leite em Pó, Integral, 380g</h3>
+        <a href="https://amzn.to/4csqYJ3" class="price-button" onclick="showAlert('Produto 12')">R$ 15,00</a>
+    </div>
+    <!-- 20 novos produtos -->
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/51zpdZ1GL6L._AC_SX425_.jpg" alt="Produto 13">
+        <h3>Densidade Máscara 230 G</h3>
+        <a href="https://amzn.to/3LSd0oP" class="price-button" onclick="showAlert('Produto 13')">R$ 29,90</a>
+    </div>
+    <div class="product">
+        <img src="https://down-cvs-br.img.susercontent.com/br-11134207-7r98o-lxepemdtkh9yec.webp" alt="Produto 14">
+        <h3>Kit Sortido 8 Peças</h3>
+        <a href="https://s.shopee.com.br/LTVMTnDw6" class="price-button" onclick="showAlert('Produto 14')">R$ 98,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_884462-MLB73046577889_112023-O.webp" alt="Produto 15">
+        <h3>Jogo C/ 4 Panelas Cerâmica Antiaderente></h3>
+        <a href="https://mercadolivre.com/sec/2SQDfso" class="price-button" onclick="showAlert('Produto 15')">R$ 145,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/517dE7lnigL._AC_SX569_.jpg" alt="Produto 16">
+        <h3>Sabão Líquido Ola Bebê 1l></h3>
+        <a href="https://amzn.to/3SG8ZaK" class="price-button" onclick="showAlert('Produto 16')">R$ 14,50</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_891672-MLB70538003829_072023-O.webp" alt="Produto 17">
+        <h3>Tênis Nike City Rep Tr Masculino</h3>
+        <a href="https://mercadolivre.com/sec/2QgcUWv" class="price-button" onclick="showAlert('Produto 17')">R$ 254,00</a>
+    </div>
+    <div class="product">
+        <img src="https://a-static.mlcdn.com.br/800x560/tenis-juvenil-adidas-hoops-3-0-cf/netshoes/fb8-8035-028-29/fbd27bfc7353a2687b03575269e97936.jpeg" alt="Produto 18">
+        <h3>Tênis Juvenil Adidas Hoops 3.0 ></h3>
+        <a href="https://www.magazinevoce.com.br/magazinefacilitabaratobr/tenis-juvenil-adidas-hoops-3-0-cf/p/bf9f3hkah3/es/tees/" class="price-button" onclick="showAlert('Produto 18')">R$ 160,99</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_844151-MLU76245258071_052024-O.webp" alt="Produto 19">
+        <h3>Samsung Smart Tv 55 Uhd 4k 55du7700 2024</h3>
+        <a href="https://mercadolivre.com/sec/2qSkLJ5" class="price-button" onclick="showAlert('Produto 19')">R$ 2.469,05 </a> 
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/61AxoG-PgYL._AC_SX679_.jpg" alt="Produto 20">
+        <h3>Pack de Refrigerante Pepsi Twist, Lata, 350ml 12 Unidades</h3>
+        <a href=" https://amzn.to/46J7fTV" class="price-button" onclick="showAlert('Produto 20')">R$ 25,83</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_628836-MLU77146899936_062024-O.webp" alt="Produto 21">
+        <h3>Furadeira Parafusadeira Sem Fio 12 V </h3>
+        <a href="https://mercadolivre.com/sec/2zpvvQU" class="price-button" onclick="showAlert('Produto 21')">R$ 98,80</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/61odqCJDblL._AC_SX569_.jpg" alt="Produto 22">
+        <h3>Pampers Lenços Umedecidos Higiene Completa 192 Unidades</h3>
+        <a href="https://amzn.to/3WWylDS" class="price-button" onclick="showAlert('Produto 22')">R$ 21,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_951770-MLU78026952828_082024-O.webp" alt="Produto 23">
+        <h3>Cobertor Queen Size Grosso Luxo</h3>
+        <a href="https://mercadolivre.com/sec/2n2LyW3" class="price-button" onclick="showAlert('Produto 23')">R$ 96,50</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_922130-MLU73470746844_122023-O.webp" alt="Produto 24">
+        <h3>Jogo 6 Taças de Vidro Transparente 340ml</h3>
+        <a href="https://mercadolivre.com/sec/2ie4X2s" class="price-button" onclick="showAlert('Produto 24')">R$ 34,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_927052-MLB74526440031_022024-O.webp" alt="Produto 25">
+        <h3>Tênis Unisex Wave Way 4 Mizuno </h3>
+        <a href="link-de-afiliado25" class="price-button" onclick="showAlert('Produto 25')">R$ 239,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_675604-MLB71397461923_082023-O.webp" alt="Produto 26">
+        <h3>Kit 10 Cuecas Box Boxer</h3>
+        <a href="https://produto.mercadolivre.com.br/MLB-1586040085-kit-10-cuecas-box-boxer-estampadas-masculino-atacado-revenda-_JM?hide_psmb=true#promotion_type%3DTODAY_PROMOTION%26deal_print_id%3Db1b5c642-af1d-4c2a-a067-f1a51abc4ea9%26position%3D48%26search_layout%3Dgrid%26type%3Ditem%26tracking_id%3D591bfc24-dcc0-4189-a1a7-42fd463f1a25&deal_print_id=3315262e-4f7b-4695-8d06-f203ed358f8f&promotion_type=TODAY_PROMOTION:~:text=Kit%2010%20Cuecas%20Box%20Boxer%20Estampadas%20Masculino%20Atacado%20Revenda" class="price-button" onclick="showAlert('Produto 26')">R$ 38,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_600773-MLA72805407534_112023-O.webp" alt="Produto 27">
+        <h3>Perfume 212 Vip Black Edp 200ml</h3>
+        <a href="https://mercadolivre.com/sec/2L5gRiz" class="price-button" onclick="showAlert('Produto 27')">R$ 478,00</a>
+    </div>
+    <div class="product">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_859818-MLU75979267969_042024-O.webp" alt="Produto 28">
+        <h3>Caixa De Som Go Essential Portátil Bluetooth Cor Preta Jbl </h3>
+        <a href="https://mercadolivre.com/sec/1jxUqXN" class="price-button" onclick="showAlert('Produto 28')">R$ 148,99</a>
+    </div>
+    <div class="product">
+        <img src="https://down-cvs-br.img.susercontent.com/br-11134207-7r98o-lycir5m95x1x36.webp" alt="Produto 29">
+        <h3>Sandália Infantil Meninio Papete Masculina </h3>
+        <a href="https://s.shopee.com.br/9A4wj56sXh" class="price-button" onclick="showAlert('Produto 29')">R$ 89,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/71Tmki232AL._AC_SX679_.jpg" alt="Produto 30">
+        <h3>Whisky Jim Beam Bourbon 1L</h3>
+        <a href="https://amzn.to/4fIDKWG" class="price-button" onclick="showAlert('Produto 30')">R$ 80,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/61gQETlUa4L.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Produto 31">
+        <h3>Intimus Gel Absorvente Noturno </h3>
+        <a href="https://amzn.to/3LXQ3Rf" class="price-button" onclick="showAlert('Produto 31')">R$ 19,00</a>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/51Rmavt4J5L._AC_SX425_.jpg" alt="Produto 32">
+        <h3>Oléo Lola Argan Oil, 50 ml</h3>
+        <a href="https://amzn.to/46DliKV" class="price-button" onclick="showAlert('Produto 32')">R$ 14,99</a>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+    <a href="/termos-de-uso.html">Termos de Uso</a> | 
+    <a href="/politicas-de-privacidade.html">Políticas de Privacidade</a>
+</footer>
+
